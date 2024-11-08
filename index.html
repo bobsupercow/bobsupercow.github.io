@@ -140,9 +140,16 @@
 											</div>
 										</div>
 									</form>
+									<div id="successmsg" hidden><div class="alert alert-success">
+										<strong>Success!</strong> Your message has been sent.</div></div>
+									<div id="errormsg" hidden><div class="alert alert-danger">
+										<strong>Error!</strong> There was an error sending your message. </div></div>
+									<!-- Script for Form Submission -->
 									<script>
 										const scriptURL = 'https://script.google.com/macros/s/AKfycbwhcheWvIAkMwC2QYEbSwTRUJ1AC6xBcAsM4P2vgrl2iG33tjBjfUBnA_idAbit3ibQ/exec'
 										const form = document.forms['submit-to-google-sheet']
+										const successmsg=document.getElementById('successmsg');
+										const errormsg=document.getElementById('errormsg');
 									  
 										form.addEventListener('submit', e => {
 										  e.preventDefault()
@@ -174,6 +181,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
