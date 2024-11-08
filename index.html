@@ -126,7 +126,7 @@
 							<section id="four">
 								<div class="container">
 									<h3>Contact Me</h3>
-									<p>Feel free to contact me regarding your next project or to request a seroius copy of my resume. Let's Work Together</p>
+									<p>Feel free to contact me regarding your next project or to request a serious copy of my resume. Let's Work Together</p>
 									<form method="post" action="#">
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
@@ -141,6 +141,17 @@
 											</div>
 										</div>
 									</form>
+									<script>
+										const scriptURL = 'https://script.google.com/macros/s/AKfycbwhcheWvIAkMwC2QYEbSwTRUJ1AC6xBcAsM4P2vgrl2iG33tjBjfUBnA_idAbit3ibQ/exec'
+										const form = document.forms['submit-to-google-sheet']
+									  
+										form.addEventListener('submit', e => {
+										  e.preventDefault()
+										  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+											.then(response => console.log('Success!', response))
+											.catch(error => console.error('Error!', error.message))
+										})
+									  </script>
 								</div>
 							</section>
 
